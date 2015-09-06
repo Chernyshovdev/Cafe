@@ -20,7 +20,7 @@ public abstract class Drink {
     }
 
     public double cost() {
-        Double price=0.0;
+        double price=0.0;
         for(Topping topping:toppings){
             price+=topping.cost();
         }
