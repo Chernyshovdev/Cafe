@@ -25,7 +25,7 @@ public abstract class Drink {
         toppings.add(e);
     }
 
-    public double searchPriceToppings(){
+    protected double getPriceToppings(){
         Double price=0.0;
         for(int i=0;i<toppings.size();i++){
             price+=toppings.get(i).cost();

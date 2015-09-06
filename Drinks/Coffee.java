@@ -15,7 +15,7 @@ public class Coffee extends Drink {
     }
     @Override
     public double cost() {
-        return PRICES.getCoffeePrice()+searchPriceToppings();
+        return PRICES.getCoffeePrice()+ getPriceToppings();
     }
 
 }

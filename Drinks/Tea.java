@@ -19,6 +19,6 @@ public class Tea extends Drink {
 
     @Override
     public double cost() {
-        return PRICES.getTeaPrice()+searchPriceToppings() ;
+        return PRICES.getTeaPrice()+ getPriceToppings() ;
     }
 }
