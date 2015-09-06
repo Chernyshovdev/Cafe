@@ -41,17 +41,12 @@ public enum PriceList {
         }
     }
 
-    public double getPrice(String keyToSearch) {
-        return searchPriceFromConfigFile(keyToSearch.toLowerCase());
-    }
-
-    private double searchPriceFromConfigFile(String Key) {
+    public double getPrice(String key) {
         Double result = null;
-        if (priceMap.containsKey(Key)) {
-            result = priceMap.get(Key);
+        if (priceMap.containsKey(key.toLowerCase())) {
+            result = priceMap.get(key.toLowerCase());
         }
         return result;
     }
-
 }
 
