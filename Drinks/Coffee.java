@@ -6,10 +6,9 @@ package ACP8.homeworkProf2.Cafe.Drinks;
 
 import ACP8.homeworkProf2.Cafe.Drink;
 
-import static ACP8.homeworkProf2.Cafe.PriceList.*;
 
 public class Coffee extends Drink {
     public Coffee() {
-        super("Americano",PRICES.getPrice("Americano"));
+        super("Americano");
     }
 }

@@ -1,6 +1,7 @@
 package ACP8.homeworkProf2.Cafe.Toppings;
 
 import ACP8.homeworkProf2.Cafe.Topping;
+
 import static ACP8.homeworkProf2.Cafe.PriceList.*;
 
 /**
@@ -9,6 +10,6 @@ import static ACP8.homeworkProf2.Cafe.PriceList.*;
 public class Sugar extends Topping {
 
     public Sugar() {
-        super("Sugar",PRICES.getPrice("Sugar"));
+        super("Sugar");
     }
 }

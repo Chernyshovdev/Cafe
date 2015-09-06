@@ -46,9 +46,9 @@ public enum PriceList {
     }
 
     private double searchPriceFromConfigFile(String Key) {
-            Double result=null;
-            if (hashMap.containsKey(Key)) {
-                result =hashMap.get(Key);
+        Double result = null;
+        if (hashMap.containsKey(Key)) {
+            result = hashMap.get(Key);
         }
         return result;
     }
