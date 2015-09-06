@@ -11,7 +11,7 @@ import java.util.Map;
 public enum PriceList {
     PRICES;
 
-    Map<String, Double> hashMap = new HashMap<>();
+    Map<String, Double> priceMap = new HashMap<>();
 
     private PriceList() {
         setup();
@@ -37,7 +37,7 @@ public enum PriceList {
             String[] kv = kvPair.split("=");
             String key = kv[0];
             Double value = Double.parseDouble(kv[1]);
-            hashMap.put(key, value);
+            priceMap.put(key, value);
         }
     }
 
@@ -47,8 +47,8 @@ public enum PriceList {
 
     private double searchPriceFromConfigFile(String Key) {
         Double result = null;
-        if (hashMap.containsKey(Key)) {
-            result = hashMap.get(Key);
+        if (priceMap.containsKey(Key)) {
+            result = priceMap.get(Key);
         }
         return result;
     }
