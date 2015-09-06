@@ -9,6 +9,6 @@ import static ACP8.homeworkProf2.Cafe.PriceList.*;
 
 public class Tea extends Drink {
     public Tea() {
-        super("England tea",PRICES.getTeaPrice());
+        super("England tea",PRICES.getPrice("Tea"));
     }
 }

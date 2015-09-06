@@ -10,11 +10,6 @@ import static ACP8.homeworkProf2.Cafe.PriceList.*;
 
 public class Milk extends Topping {
     public Milk() {
-        super("Milk");
-    }
-
-    @Override
-    public double cost() {
-        return PRICES.getMilkPrice();
+        super("Milk",PRICES.getPrice("Milk"));
     }
 }

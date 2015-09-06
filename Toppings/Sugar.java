@@ -9,11 +9,6 @@ import static ACP8.homeworkProf2.Cafe.PriceList.*;
 public class Sugar extends Topping {
 
     public Sugar() {
-        super("Sugar");
-    }
-
-    @Override
-    public double cost() {
-        return PRICES.getSugarPrice();
+        super("Sugar",PRICES.getPrice("Sugar"));
     }
 }

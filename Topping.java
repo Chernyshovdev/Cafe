@@ -5,11 +5,16 @@ package ACP8.homeworkProf2.Cafe;
  */
 public abstract class Topping {
 
-    public Topping(String description) {
+    public Topping(String description,double cost) {
         this.description = description;
+        this.cost=cost;
     }
 
     private String description;
 
-    public abstract double cost();
+    private double cost;
+
+    public  double cost(){
+        return cost;
+    }
 }

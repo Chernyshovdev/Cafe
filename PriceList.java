@@ -1,6 +1,8 @@
 package ACP8.homeworkProf2.Cafe;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -9,7 +11,7 @@ import java.io.*;
 public enum PriceList {
     PRICES;
 
-    private String price;
+    Map<String, Double> hashMap = new HashMap<>();
 
     private PriceList() {
         setup();
@@ -29,37 +31,27 @@ public enum PriceList {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        price = builder.toString();
-    }
-
-    private double searchPriceFromConfigFile(String specialKey) {
-        Double result = null;
+        String price = builder.toString();
         String[] kvPairs = price.split(";");
         for (String kvPair : kvPairs) {
             String[] kv = kvPair.split("=");
             String key = kv[0];
-            String value = kv[1];
-            if (key.equals(specialKey)) {
-                result = Double.parseDouble(value);
-                break;
-            }
+            Double value = Double.parseDouble(kv[1]);
+            hashMap.put(key, value);
+        }
+    }
+
+    public double getPrice(String keyToSearch) {
+        return searchPriceFromConfigFile(keyToSearch.toLowerCase());
+    }
+
+    private double searchPriceFromConfigFile(String Key) {
+            Double result=null;
+            if (hashMap.containsKey(Key)) {
+                result =hashMap.get(Key);
         }
         return result;
     }
 
-    public double getCoffeePrice() {
-        return searchPriceFromConfigFile("coffee");
-    }
-
-    public double getTeaPrice() {
-        return searchPriceFromConfigFile("tea");
-    }
-
-    public double getMilkPrice() {
-        return searchPriceFromConfigFile("milk");
-    }
-
-    public double getSugarPrice() {
-        return searchPriceFromConfigFile("sugar");
-    }
 }
+
