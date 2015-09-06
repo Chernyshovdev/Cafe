@@ -7,29 +7,28 @@ import java.util.ArrayList;
  */
 public abstract class Drink {
 
+    private double cost;
+
     private String description;
 
     private ArrayList<Topping> toppings=new ArrayList<>();
 
-    public Drink(String description) {
+    public Drink(String description,double cost) {
         this.description = description;
+        this.cost=cost;
+
     }
 
-    public String getDescription() {
-        return description;
+    public double cost() {
+        Double price=0.0;
+        for(Topping topping:toppings){
+            price+=topping.cost();
+        }
+        return price+cost;
     }
-
-    public abstract double cost();
 
     public void addTopping(Topping e){
         toppings.add(e);
     }
 
-    protected double getPriceToppings(){
-        Double price=0.0;
-        for(int i=0;i<toppings.size();i++){
-            price+=toppings.get(i).cost();
-        }
-        return price;
-    }
 }

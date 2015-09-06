@@ -9,13 +9,7 @@ import ACP8.homeworkProf2.Cafe.Drink;
 import static ACP8.homeworkProf2.Cafe.PriceList.*;
 
 public class Coffee extends Drink {
-
     public Coffee() {
-        super("Americano");
+        super("Americano",PRICES.getCoffeePrice());
     }
-    @Override
-    public double cost() {
-        return PRICES.getCoffeePrice()+ getPriceToppings();
-    }
-
 }
